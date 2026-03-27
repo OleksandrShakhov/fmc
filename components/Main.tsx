@@ -15,7 +15,14 @@ const providers = [
   "Dr. Robert Low",
   "Dr. Wayne Burton",
   "Kimberly Wescott, NP",
-];
+].sort((a, b) => {
+  const getLastName = (name: string) => {
+    const parts = name.replace("Dr. ", "").split(" ");
+    return parts[parts.length - 1];
+  };
+
+  return getLastName(a).localeCompare(getLastName(b));
+});
 
 export default function Main() {
   return (
@@ -56,12 +63,12 @@ export default function Main() {
 
             <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
               <div className="w-full overflow-hidden bg-slate-100">
-              <img
-                src="/clinic.jpeg"
-                alt="Family Medical Centre building"
-                className="w-full h-auto"
-              />
-            </div>
+                <img
+                  src="/clinic.jpeg"
+                  alt="Family Medical Centre building"
+                  className="w-full h-auto"
+                />
+              </div>
 
               <div className="grid gap-3 border-t border-slate-200 bg-white p-4 sm:grid-cols-3 sm:p-5">
                 <div className="rounded-2xl bg-slate-50 p-4">
@@ -137,7 +144,6 @@ export default function Main() {
           </div>
         </div>
       </section>
-
 
       <section className="mx-auto grid max-w-7xl gap-6 px-6 pb-12 lg:grid-cols-3 lg:px-8 lg:pb-16">
         <div
@@ -221,6 +227,7 @@ export default function Main() {
           </div>
         </div>
       </section>
+
       <section className="mx-auto max-w-7xl px-6 pb-8 lg:px-8">
         <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
           <div className="border-b border-slate-200 p-6 sm:p-8">
