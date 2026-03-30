@@ -3,9 +3,9 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Cottonwood Canyon Campground",
+  title: "Family Medical Centre",
   description:
-    "Seasonal campground near Waterton National Park offering full-service RV sites and cabins.",
+    "Family Medical Centre providing comprehensive healthcare services for all ages.",
 };
 
 export default function RootLayout({
